@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Браузерные игры</title>
+<style>
+  :root{
+    --bg:#0e1014; --card:#171a20; --line:#262b33; --txt:#e8e6e1; --dim:#8b9099;
+    --acc:#5bff8a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);min-height:100vh;
+    font-family:ui-sans-serif,system-ui,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:56px 16px 70px}
+  .wrap{max-width:900px;margin:0 auto}
+  header{margin-bottom:38px}
+  h1{font-size:clamp(30px,5vw,44px);letter-spacing:-.5px;margin-bottom:10px}
+  .lead{color:var(--dim);font-size:15px;line-height:1.6;max-width:620px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:20px;text-decoration:none;color:inherit;transition:.15s}
+  a.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+  .ico{font-size:28px;margin-bottom:12px}
+  .card h2{font-size:18px;margin-bottom:6px}
+  .card p{color:var(--dim);font-size:13.5px;line-height:1.55}
+  .tags{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-size:10.5px;color:var(--dim);border:1px solid var(--line);
+    padding:2px 7px;border-radius:20px}
+  .keys{margin-top:12px;font-size:11.5px;color:#6f757e;font-family:ui-monospace,monospace}
+  footer{margin-top:44px;color:#636972;font-size:12.5px;line-height:1.7}
+  footer b{color:var(--dim);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Браузерные игры</h1>
+    <p class="lead">Четыре игры на чистом JavaScript и WebGL2 — без движков, библиотек и сборки.
+    Каждая игра это один HTML-файл: открывается двойным кликом и работает без интернета.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="blockstrike.html">
+      <div class="ico">🔫</div>
+      <h2>Блок Страйк</h2>
+      <p>Шутер от первого лица. Карта по мотивам Dust 2, девять стволов, магазин закупки,
+      экономика раундов и девять ботов с ИИ.</p>
+      <div class="tags"><span class="tag">шутер</span><span class="tag">боты</span><span class="tag">раунды</span></div>
+      <div class="keys">WASD · ЛКМ огонь · R перезарядка · B магазин</div>
+    </a>
+
+    <a class="card" href="survcraft.html">
+      <div class="ico">⛏️</div>
+      <h2>Каменный век</h2>
+      <p>Выживание в воксельном мире. Здоровье и голод, инвентарь с крафтом, настоящее
+      освещение с факелами, смена дня и ночи, враги в темноте.</p>
+      <div class="tags"><span class="tag">выживание</span><span class="tag">крафт</span><span class="tag">свет</span></div>
+      <div class="keys">WASD · ЛКМ копать · ПКМ ставить · E рюкзак</div>
+    </a>
+
+    <a class="card" href="kubworld.html">
+      <div class="ico">🌍</div>
+      <h2>Кубмир</h2>
+      <p>Воксельная песочница без выживания. Бесконечный мир с биомами, деревьями,
+      водой и пещерами — просто строй и исследуй.</p>
+      <div class="tags"><span class="tag">песочница</span><span class="tag">бесконечный мир</span></div>
+      <div class="keys">WASD · ЛКМ ломать · ПКМ ставить · F полёт</div>
+    </a>
+
+    <a class="card" href="parry.html">
+      <div class="ico">⚡</div>
+      <h2>Парри</h2>
+      <p>Аркада на реакцию. Отбивай щитом летящие осколки — отражённый сносит других.
+      Серия без урона умножает очки.</p>
+      <div class="tags"><span class="tag">аркада</span><span class="tag">реакция</span></div>
+      <div class="keys">мышь поворот · клик или пробел — парировать</div>
+    </a>
+  </div>
+
+  <footer>
+    <b>Как это сделано.</b> Собственный рендер на WebGL2 — шейдеры, матрицы, построение мешей.
+    Текстуры рисуются в canvas при запуске. В воксельных играх — генерация ландшафта шумом,
+    чанки, распространение света поиском в ширину. В шутере — hitscan-стрельба лучом,
+    AABB-коллизии, ИИ ботов с проверкой видимости. Звук генерируется через Web Audio API.
+    <br><br>
+    Нужен браузер с поддержкой WebGL2: Chrome, Edge, Firefox или Safari свежих версий.
+  </footer>
+</div>
+</body>
+</html>
